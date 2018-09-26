@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from '../models/task.model';
-import { Observable } from 'rxjs/Observable';
-import { TaskService } from '../task.service';
 import { MatDialog, MatDialogConfig } from '@angular/material';
+import { Observable } from 'rxjs/Observable';
+
+import { Task } from '../models/task.model';
+import { TaskService } from '../task.service';
 import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 
 @Component({
@@ -30,7 +31,10 @@ export class TaskListComponent implements OnInit {
   }
 
   showDialog(task?: Task): void {
-    const config: MatDialogConfig<any> = (task) ? {data: { task }} : null;
+    const config: MatDialogConfig<any> =
+    (task)
+      ? {data: { task }}
+      : null;
     this.dialog.open(TaskDialogComponent, config);
   }
 }

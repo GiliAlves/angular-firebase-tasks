@@ -10,8 +10,8 @@
 </mat-nav-list>
 
 <mat-menu #taskMenu="matMenu" overlapTrigger="false">
-  <ng-template matMenuContent let-task="taskToDeletes">
-      <button mat-menu-item (click)="showDialog(onPerfomTask)" >
+  <ng-template matMenuContent let-task="taskToDelete">
+      <button mat-menu-item (click)="showDialog(task)" >
           <mat-icon>edit</mat-icon>
           <span>Update</span>
         </button>
